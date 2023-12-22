@@ -15,6 +15,7 @@ nextButton.addEventListener('click', () => {
         currentActive = circles.length;
     }
     update();
+    console.log(currentActive);
 });
 
 //Previous Button
@@ -37,5 +38,17 @@ function update(){
     })
 
     const actives = document.querySelectorAll('.active');
-    progress.style.width = `${(actives.length / circles.length) * 100}%`;
+    progress.style.width = `${((actives.length - 1)/ (circles.length - 1)) * 100}%`;
+
+    if(currentActive === 1){
+        previousButton.disabled = true;
+    } else if (currentActive >= 2){
+        previousButton.disabled = false;
+    }
+    
+    if (currentActive === circles.length){
+        nextButton.disabled = true;
+    } else {
+        nextButton.disabled = false;
+    }
 }
