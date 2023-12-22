@@ -78,4 +78,8 @@ body {
 }
 .btn:active {
   transform: scale(0.95);
+}
+.btn:disabled {
+  background-color: #bbbbbb;
+  cursor: not-allowed;
 }/*# sourceMappingURL=style.css.map */
